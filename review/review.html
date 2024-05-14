@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="review.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >
+</head>
+<body>
+     <div class="container">
+        <div class="heading">
+            <h1 id="head">Our Review</h1>
+            <div class="line"></div>
+            <div class="img">
+                <img src="person1.PNG" id="person_img" alt="">
+            </div>
+            <h3 id="name">Person1</h3>
+            <span id="job">Job-title</span>
+            <div class="paragraph">
+                <p id="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci tempore tenetur praesentium iusto eius possimus. Earum qui culpa eveniet esse.</p>
+            </div>
+            <div class="btns">
+                <button id="prev-btn">
+                    <i class="fa-solid fa-backward" style="color: #63E6BE;"></i>
+                </button>
+                <button id="next-btn">
+                    <i class="fa-solid fa-forward" style="color: #63E6BE;"></i>
+                </button>
+            </div>
+        </div>
+        
+        
+     </div>
+     <script>
+        var person_img=document.getElementById("person_img");
+        var person_name=document.getElementById("name");
+        var person_job=document.getElementById("job");
+        var person_para=document.getElementById("content");
+        var prevbtn=document.getElementById("prev-btn");
+        var nextbtn=document.getElementById("next-btn");
+        const reviews=[
+            {
+                name:"Joan",
+                job:"Web Developer",
+                img:"person2.png",
+                para:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam accusamus provident animi ipsum distinctio quidem minus similique numquam. At, impedit.",
+
+        },
+        {
+                name:"Jasper",
+                job:"UX designer",
+                img:"person3.png",
+                para:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam accusamus provident animi ipsum distinctio quidem minus similique numquam. At, impedit.",
+
+        },
+        {
+                name:"Megna",
+                job:"Backend developer",
+                img:"person1.png",
+                para:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam accusamus provident animi ipsum distinctio quidem minus similique numquam. At, impedit.",
+
+        },
+        {
+                name:"jacob",
+                job:"front-end developer",
+                img:"person4.png",
+                para:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam accusamus provident animi ipsum distinctio quidem minus similique numquam. At, impedit.",
+
+        }
+    ];
+    let currentitem=0;
+    function showpersondetails()
+    {
+        person_img.src=reviews[currentitem].img;
+        person_name.textContent=reviews[currentitem].name;
+        person_job.textContent=reviews[currentitem].job;
+        person_para.textContent=reviews[currentitem].para;
+        
+    }
+    window.addEventListener("DOMContentLoaded",function(){
+        showpersondetails();
+    });
+    nextbtn.addEventListener("click",function()
+{
+    currentitem++;
+    if (currentitem>reviews.length -1)
+    {
+        currentitem=0;
+    }
+    showpersondetails();
+});
+prevbtn.addEventListener("click",function()
+{
+   
+    currentitem--;
+    if(currentitem<0)
+    {
+        currentitem=0;
+    }
+    showpersondetails();
+})
+     </script>
+    
+</body>
+</html>

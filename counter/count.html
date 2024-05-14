@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="count.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Count</h1>
+        <span id="display">0</span>
+        <br><br>
+        <div class="btns">
+        <button id="btn" class="btn decrease">Decrease</button>
+        <button id="btn" class="btn increase">Increase</button>
+        <button id="btn" class="btn reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        count=0;
+        let display=document.getElementById("display");
+        let btns=document.querySelectorAll(".btn");
+        btns.forEach(function(elements){
+            elements.addEventListener("click",function(e){
+                const styles=e.currentTarget.classList;
+                // console.log(styles);
+                if(styles.contains('decrease'))
+                {
+                    count--;
+                }
+                else if (styles.contains('increase'))
+                {
+                    count++;
+                }
+                else{
+                    count=0;
+                }
+                display.textContent=count;
+                if(count>0)
+                display.style.color="green";
+                else if(count<0)
+                display.style.color="red";
+                else
+                display.style.color="blue"
+            
+            })
+            
+        })
+    </script>
+</body>
+</html>

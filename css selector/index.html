@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="box">
+    <div class="container">
+        <div class="tool">
+            <div class="inside">
+                <label for="">Range</label> 
+                <input type="range" id="range_id" value="10" min="0" max="250"><br>
+                <!-- <input type="range" id="range2_id" value="2" min="0" max="10"><br> -->
+                
+                <textarea name="" rows="5" cols="30" id="textarea" ></textarea><br>
+                <button id="btn">Copy code</button><br>
+
+            </div>
+        </div>
+    </div>
+   </div>
+   <script>
+    var container=document.querySelector('.container');
+    var textarea=document.getElementById("textarea");
+    var copybtn=document.getElementById("btn");
+    var coding="";
+    // var border="";
+    document.addEventListener("DOMContentLoaded",()=>{
+        range_id.addEventListener("mousemove",allborderupdate);
+        range_id.addEventListener("change",allborderupdate);
+        function allborderupdate()
+        {
+            var a=document.getElementById("range_id").value;
+            // var b=document.getElementById("range2_id").value;
+             
+            coding=`border-radius:${a}px;`;
+            // border=`border:${b}px red;`;
+            textarea.innerHTML=coding;
+             
+            container.style.cssText=coding;
+            // container.style.cssText=border;
+
+        }
+        copybtn.addEventListener('click',copyy);
+        function copyy()
+        {
+            textarea.select();
+            document.execCommand(`copy`);
+        }
+        allborderupdate();
+        
+
+        
+    });
+   </script>
+    
+</body>
+</html>

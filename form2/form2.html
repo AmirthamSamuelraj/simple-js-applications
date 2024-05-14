@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="form2.css">
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <h2 align="center">To-do List</h2>
+                 <input type="text" id="projname" placeholder="Project Name"><br><br>
+                 <input type="text" id="task" placeholder="Task"><br><br>
+                 <input type="text"id="taskassigned" placeholder="Task assigned by"><br><br>
+                 <input type="text"id="taskcompletion" placeholder="% of Task completion"><br><br>
+                  
+                  
+                  
+                 <button  id="btn" onclick="viewing();return false">Submit</button>
+                <ul id="list">
+
+                </ul>
+            
+            </form>
+            <p id="para"></p>
+            <div id="container2">
+                <table border="1px solid white" id="rowcol">
+                    <tr>
+                        <th>S.No</th>
+                        <th>Project Name</th>
+                        <th>Task</th>
+                        <th>Task assigned by</th>
+                        <th>% of Completion</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         
+        
+        <script>
+            
+               var lists=[];
+               if(localStorage.getItem("form2").length >0)
+               {
+                var old_data= JSON.parse(localStorage.getItem("form2"));
+                var arrlen=old_data.length;
+                for (var i=0;i<=arrlen;i++)
+                {
+                    document.getElementById("para").innerHTML=old_data  + "<button onclick='remove()' id='remo'>X</button>"
+                    
+                }
+               }
+    
+                function viewing()
+                {
+                   
+                    var neww=[];
+                    var a=document.getElementById("projname").value;
+                    var b= document.getElementById("task").value;
+                    var c=document.getElementById("taskassigned").value;
+                    var d=document.getElementById("taskcompletion").value;
+                    
+                    
+                    neww.push(a,b,c,d) ;
+                    lists.push(neww);
+                    localStorage.setItem("form2",JSON.stringify(lists))
+                    
+                    a.value="";
+                    b.value="";
+                    c.value="";
+                    document.getElementById("container2").style.display="block";
+                    var tablebody=document.getElementById("rowcol");
+                    var newrow=tablebody.insertRow();
+                    var rowcount=tablebody.rows.length - 1;
+                    var cell1=newrow.insertCell(0);
+                    var cell2=newrow.insertCell(1);
+                    var cell3=newrow.insertCell(2);
+                    var cell4=newrow.insertCell(3);
+                    var cell5=newrow.insertCell(4);
+                    cell1.innerHTML=rowcount;
+                    cell2.innerHTML=a;
+                    cell3.innerHTML=b;
+                    cell4.innerHTML=c;
+                    cell5.innerHTML=d;
+                    localStorage.setItem("datass",tablebody.innerText);
+                    // if (localStorage.getItem("datass") == null)
+                    // {
+                    //     localStorage.setItem("datass",[]);
+                    // }
+                    // var old_data=localStorage.getItem("datass");
+                    // old_data.push(lists);
+                    // localStorage.setItem("datass",old_data);
+                     
+                
+
+                    
+
+
+                    
+                }
+                function remove()
+                {
+                    event.target.parentElement.remove();
+                }
+            
+        </script>
+    </body>
+</html>

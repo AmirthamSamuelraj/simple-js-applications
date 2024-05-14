@@ -1,0 +1,105 @@
+
+*
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}.container
+{
+    width:500px;
+    height:400px;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    padding:40px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+}
+h3
+{
+    color: navy;
+}
+
+
+h1{
+    font-family: cursive;
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+}
+ .showtext
+ {
+    display: block;
+ }
+  
+.showtext .answer
+{
+    display: block;
+}
+.hide
+{
+    display: none;
+}
+.showtext .hide{
+    display: inline;
+}
+.showtext .view{
+    display: none;
+}
+.question
+{
+    width: 90%;
+}
+.question1
+{
+    
+    position: relative;
+    width: 94%;
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+    float: left;
+    flex-direction: column;
+   
+    
+     
+}
+ 
+ 
+.hide
+{
+    display: none;
+}
+
+.answer span{
+    flex-direction: column;
+     
+    width: 94%;
+  
+    padding: 10px;
+    
+}
+.answer{
+    display: none;
+}
+ .content
+ {
+    display: flex;
+ }
+ button
+ {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin-top: 21px;
+      
+ }
+ .btns
+ {
+    float: right;
+    width: 10%;
+    
+ }

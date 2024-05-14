@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" >
+</head>
+<body>
+    <h1>General Questions</h1>
+    <div class="container">
+        
+        <div class="question1" class="showtext">
+            <div class="content">
+                <h3 class="question">What is translator?</h3>
+                <div class="btns">
+                    <button class="btn">
+                        <span class="view"><i class="fa fa-eye" style="color: #345acb;"></i></span>
+                
+                
+                        <span class="hide"><i class="fa-regular fa-eye-slash" style="color: #345acb;"></i></span>
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+                <span>A python interpreter is a computer program that converts each high-level program statement into machine code.</span>
+            </div>
+        </div>
+       
+        <!-- new -->
+        <div class="question1" class="showtext">
+            <div class="content">
+                <h3 class="question">What is Interpreter?</h3>
+                <div class="btns">
+                    <button class="btn">
+                        <span class="view"><i class="fa fa-eye" style="color: #345acb;"></i></span>
+                
+                
+                        <span class="hide"><i class="fa-regular fa-eye-slash" style="color: #345acb;"></i></span>
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+                <span>A python interpreter is a computer program that converts each high-level program statement into machine code.</span>
+            </div>
+           
+        </div>
+         
+
+        <div class="question1" class="showtext">
+            <div class="content">
+                <h3 class="question">What is Programming?</h3>
+                <div class="btns">
+                    <button class="btn">
+                        <span class="view"><i class="fa fa-eye" style="color: #345acb;"></i></span>
+                
+                
+                        <span class="hide"><i class="fa-regular fa-eye-slash" style="color: #345acb;"></i></span>
+                    </button>
+                </div>
+            </div>
+            <div class="answer">
+                <span>A python interpreter is a computer program that converts each high-level program statement into machine code.</span>
+            </div>
+           
+        </div>
+         
+        <!-- new -->
+    </div>
+    <script>
+         const view_btn=document.querySelectorAll(".btn");
+        const answer=document.querySelectorAll(".answer");
+        const hide_btn=document.querySelectorAll(".hide");
+         view_btn.forEach(function(elements)
+        {
+            elements.addEventListener("click",function(e)
+            {
+                const question=e.currentTarget.parentElement.parentElement.parentElement;
+                question.classList.toggle("showtext")
+            });
+        });
+         
+        hide_btn.forEach(function(element)
+    {
+        element.addEventListener("click",function(e)
+    {
+
+    })
+    })
+        
+//         view_btn.addEventListener("click",function()
+//     {
+//         answer.style.display="block";
+//         hide_btn.style.display="block";
+//         view_btn.style.display="none";
+
+//     });
+
+//     hide_btn.addEventListener("click", function()
+// {
+//         answer.style.display="none";
+//         hide_btn.style.display="none";
+//         view_btn.style.display="block";
+
+// })
+
+    </script>
+</body>
+ </html>
